@@ -1,0 +1,18 @@
+CT,Central
+WC,Wan Chai
+SL,Stanley
+SO,Shek O
+MK,Mong Kok
+TY,Tsing Yi
+ST,Shatin
+TM,Tuen Mun
+TP,Tai Po
+SK,Sai Kung
+YL,Yuen Long
+TO,Tai O
+GO,Go
+CH,Chance
+IT,Income Tax
+FP,Free Parking
+GJ,Go To Jail
+JV,In Jail/Just Visiting
