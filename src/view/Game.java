@@ -14,30 +14,33 @@ import static controller.InputListener.receivedResponse;
 import static model.utils.FILE_PATHS.*;
 
 public class Game extends FileHandler implements GAME_CONSTANTS {
+    private int currentPlayerIndex;
+    private int round;
     private GameBoard gb;
     private Dice dice;
     private Player[] players;
-    private int round;
-    private int currentPlayerIndex;
+
     public Game(int players, String[] names, String boardName, String[] boardDetails){
-        this.dice = new Dice();
-        this.players = new Player[players];
-        for(int i = 0; i < players; i++){
-            this.players[i] = new Player(names[i], (i+1));
-        }
         this.currentPlayerIndex = 0;
         this.round = 1;
         int[] propertiesPositions = getPropertiesPosFromFile(boardName,GAMEBOARD_PATH,PROPERTY_PATH,SQUARE_PATH);
         this.gb = new GameBoard(propertiesPositions, boardDetails);
+        this.dice = new Dice();
+        this.players = new Player[players];
+        for(int i = 0; i < players; i++){
+            this.players[i] = new Player(names[i], (i+1), this.gb);
+        }
     }
     public void executeTurn(){
         Player currentPlayer = players[currentPlayerIndex];
         boolean turnEnd = false;
         while(!turnEnd){
             int originalPosition = currentPlayer.getPosition();
-            if(currentPlayer.isJailed()){
-                currentPlayer.checkEffects(this.gb,originalPosition,originalPosition);
-                currentPlayer.tryJailbreak(this.dice,this.gb);
+            if(currentPlayer.isRetired()){
+                System.out.println("Rest in peace Player " + currentPlayer.getNumber() + " (" + currentPlayer.getName() + ")");
+                turnEnd = true;
+            }else if(currentPlayer.isJailed()){
+                currentPlayer.checkEffects(originalPosition,originalPosition);
                 turnEnd = true;
             }else{
                 System.out.println("Player " + currentPlayer.getNumber() + " (" + currentPlayer.getName() + "), what is your move.");
@@ -45,7 +48,7 @@ public class Game extends FileHandler implements GAME_CONSTANTS {
                 System.out.print("1. Throw dice\t2. Check status\t3. Query\t4. Save game");
                 String r = receivedResponse();
                 if(r.equals("1")){
-                    currentPlayer.useTurn(this.dice, this.gb);
+                    currentPlayer.useTurn(this.dice);
                     turnEnd = true;
                 }else if(r.equals("2")){
                     int foo = -1;
@@ -74,7 +77,16 @@ public class Game extends FileHandler implements GAME_CONSTANTS {
         }
         this.currentPlayerIndex = (this.currentPlayerIndex + 1) % this.players.length;
     }
+    private int remainingPlayer(){
+        int numberOfPlayers = 0;
+        for(Player p : players){
+            if(!p.isRetired()){
+                numberOfPlayers++;
+            }
+        }
+        return numberOfPlayers;
+    }
     public boolean reachEnd(){
-        return this.round >= MAXIMUM_ROUNDS;
+        return this.round >= MAXIMUM_ROUNDS || remainingPlayer() <= 1;
     }
 }
