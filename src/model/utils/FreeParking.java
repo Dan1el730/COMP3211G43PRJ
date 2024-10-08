@@ -11,5 +11,6 @@ public class FreeParking extends Square{
     }
     @Override
     public void affectPlayer(Player player){
+        //Free parking has no effect!
     }
 }

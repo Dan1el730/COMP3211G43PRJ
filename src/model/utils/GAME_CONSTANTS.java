@@ -11,10 +11,11 @@ public interface GAME_CONSTANTS {
             -150, -140, -130, -120, -110, -100, -90, -80, -70, -60, -50, -40, -30, -20, -10
     };
     public static final double INCOME_TAX_RATE = 0.1;
+    public static final int JAIL_DAYS = 3;
     public static final int JAIL_PENALTY = 150;
     public static final int PLAYER_INITIAL_POSITION = 1;
     public static final int DICE_FACES = 4;
-    public static final int MAXIMUM_ROUNDS = 20;
+    public static final int MAXIMUM_ROUNDS = 100;
     public static final int GAMEBOARD_SQUARES = 20;
     public static final int MINIMUM_PRICE = 1;
     public static final int MAXIMUM_PRICE = 2000;

@@ -28,6 +28,7 @@ public class Chance extends Square {
             System.out.println("$" + Math.abs(this.amountToChange) + " amount lost for " + player.getName() + ".");
             player.reduceMoney(Math.abs(this.amountToChange));
         }
+        player.checkRetirement();
     }
     private int drawChange() {
         int index = rng.nextInt(CHANCE_MONEY_CHANGES.length);

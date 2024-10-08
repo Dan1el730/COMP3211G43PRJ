@@ -1,7 +1,7 @@
 package model.utils;
 
 public class GoToJail extends Square{
-    private int inJailJustVisitingPosition;
+    private final int inJailJustVisitingPosition;
     public GoToJail(int position, String name, int ijjvIndex){
         super(position,name);
         this.passEffective = false;

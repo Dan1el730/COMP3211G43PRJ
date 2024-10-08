@@ -36,5 +36,6 @@ public class Property extends Square{
             player.reduceMoney(this.rent);
             this.owner.addMoney(this.rent);
         }
+        //If the property is not owned, there is no action
     }
 }
