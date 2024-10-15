@@ -1,4 +1,6 @@
 it uses to see can u use git successfully.
 please freely to edit this txt to check is git working.
 
+
 Success: Longlo(10/10)
+I AM SUFFERING: Daniel(11/10)
