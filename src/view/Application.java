@@ -134,7 +134,7 @@ public class Application extends InputListener implements GAME_CONSTANTS {
                 System.out.println("And its details : ");
                 for(int i = 0; i < GAMEBOARD_SQUARES; i++){
                     details[i] = squareNames.get(mapsDetails[selectedBoardIndex][i+1]);
-                    System.out.println("Board " + (i + 1) + ": " + details[i] + " ");
+                    System.out.println("Square " + (i + 1) + ": " + details[i] + " ");
                 }
                 System.out.println("Confirm the settings? (Type Y to begin game, type any key to rebuild)");
                 if(yesResponse()){

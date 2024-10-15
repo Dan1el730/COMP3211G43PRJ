@@ -13,10 +13,11 @@ public class AdminArea extends FileHandler implements GAME_CONSTANTS {
 
     }
     public void checkPrompt(String input){
+        String name;
         switch(input){
-            case "crt prop":
+            case "create property":
                 System.out.println("What is the name of the property?");
-                String name = receivedResponse();
+                name = receivedResponse();
                 boolean gotPrice = false;
                 int price = -1;
                 do{
@@ -39,6 +40,12 @@ public class AdminArea extends FileHandler implements GAME_CONSTANTS {
                 } while(!gotRent);
                 writeNewProperty(name,price,rent,PROPERTY_PATH);
                 break;
+            case "create gameboard":
+                System.out.println("What is the name of this brand new gameboard?");
+                name = receivedResponse();
+
+                break;
+
             default:
                 System.out.println("Command not found.");
                 break;
