@@ -7,6 +7,9 @@ public class FreeParking extends Square{
     }
     @Override
     public String effectLine(Player player){
+        if(this.position == player.getPosition()){
+            return player.getName() + " just landed the " + this.name + " square! Nothing happened.";
+        }
         return player.getName() + " just passed the " + this.name + " square! Nothing happened.";
     }
     @Override

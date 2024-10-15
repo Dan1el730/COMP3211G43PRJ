@@ -2,7 +2,9 @@ package model.utils;
 
 import model.FileHandler;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static model.utils.FILE_PATHS.PROPERTY_PATH;
 
@@ -64,5 +66,32 @@ public class GameBoard extends FileHandler implements GAME_CONSTANTS{
         Square currentSquare = squares[player.getPosition()-1];
         System.out.println(currentSquare.effectLine(player));
         currentSquare.affectPlayer(player);
+    }
+    public String allOwnerships(Player player) {
+        List<String> propsList = new ArrayList<>();
+
+        for (Property property : properties) {
+            if (property.getOwner() != null) {
+                if (property.getOwner().equals(player)) {
+                    propsList.add(property.getName());
+                }
+            }
+        }
+
+        // Join the properties into a single string
+        if (propsList.isEmpty()) {
+            return "nil"; // or return "No properties owned" if preferred
+        }
+
+        return String.join(",", propsList);
+    }
+    public void removeAllOwnerships(Player player){
+        for(Property property : properties){
+            if (property.getOwner() != null) {
+                if (property.getOwner().equals(player)) {
+                    property.disown();
+                }
+            }
+        }
     }
 }

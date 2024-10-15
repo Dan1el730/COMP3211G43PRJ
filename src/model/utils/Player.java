@@ -42,7 +42,11 @@ public class Player implements GAME_CONSTANTS {
     }
     public boolean isRetired(){ return this.retired; }
     public String getStatus(){
-        return "Current status :\tMoney : " + this.money + "\tPosition : " + this.position + "\tJailed : " + this.jailed + "\n";
+        return "Current status :\tMoney : " + this.money +
+                               "\tPosition : " + this.position +
+                               "\tJailed : " + this.jailed +
+                               "\tProperties owned : " + this.playingBoard.allOwnerships(this) +
+                               "\n";
     }
     public String getDetails(){
         return "Player " + this.number + " (" + this.name + ") , Money : " + this.money;
@@ -130,6 +134,7 @@ public class Player implements GAME_CONSTANTS {
         if(this.money < 0){
             System.out.println(this.name + " just retired, the player is out!");
             this.retired = true;
+            playingBoard.removeAllOwnerships(this);
         }
     }
 }

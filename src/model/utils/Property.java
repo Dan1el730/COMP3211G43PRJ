@@ -14,6 +14,16 @@ public class Property extends Square{
         this.owned = false;
         this.owner = null;
     }
+    public String getName(){
+        return this.name;
+    }
+    public void disown(){
+        this.owned = false;
+        this.owner = null;
+    }
+    public Player getOwner() {
+        return this.owner;
+    }
     @Override
     public String effectLine(Player player){
         if(!this.owned){
@@ -26,7 +36,11 @@ public class Property extends Square{
     @Override
     public void affectPlayer(Player player){
         if(!this.owned){
-            if(yesResponse()){
+            if(player.getMoney() < this.price){
+                System.out.println(player.getName() + " does not have enough money to buy the ownership of " + this.name + "!");
+            }else if(!yesResponse()){
+                System.out.println(player.getName() + " declined the ownerships of " + this.name + ".");
+            }else{
                 System.out.println(player.getName() + " just owned " + this.name + " at a price of $" + this.price + ".");
                 player.reduceMoney(this.price);
                 this.owner = player;
@@ -35,6 +49,7 @@ public class Property extends Square{
         }else if(!player.equals(this.owner)){
             player.reduceMoney(this.rent);
             this.owner.addMoney(this.rent);
+            player.checkRetirement();
         }
         //If the property is not owned, there is no action
     }
