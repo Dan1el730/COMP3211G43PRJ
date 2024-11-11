@@ -1,0 +1,7 @@
+Round: 2
+Turn: 1
+Number of players: 2
+Player names: Georgina,Evan
+Gameboard name: Classic
+Player 1: Georgina,1,700,2,F,0,Central
+Player 2: Evan,2,900,5,F,0,Stanley
