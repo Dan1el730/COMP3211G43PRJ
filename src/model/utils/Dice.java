@@ -11,9 +11,6 @@ public class Dice implements GAME_CONSTANTS {
     private void roll(){
         this.face = roller.nextInt(DICE_FACES) + 1;
     }
-    public int getFace(){
-        return this.face;
-    }
     public int getNewFace(){
         this.roll();
         return this.face;

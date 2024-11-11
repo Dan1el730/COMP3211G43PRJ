@@ -65,4 +65,8 @@ public class InJailJustVisiting extends Square{
         }
         //does not have any effect if player is not jailed
     }
+    @Override
+    public String getStatus(){
+        return this.position + ". " + this.name;
+    }
 }

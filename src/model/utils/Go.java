@@ -13,4 +13,8 @@ public class Go extends Square{
     public void affectPlayer(Player player){
         player.addMoney(GO_INCOME);
     }
+    @Override
+    public String getStatus(){
+        return this.position + ". " + this.name;
+    }
 }

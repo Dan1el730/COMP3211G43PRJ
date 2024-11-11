@@ -14,9 +14,6 @@ public class Property extends Square{
         this.owned = false;
         this.owner = null;
     }
-    public String getName(){
-        return this.name;
-    }
     public void disown(){
         this.owned = false;
         this.owner = null;
@@ -52,5 +49,13 @@ public class Property extends Square{
             player.checkRetirement();
         }
         //If the property is not owned, there is no action
+    }
+    @Override
+    public String getStatus(){
+        String ownershipInformation = "";
+        if(this.owned){
+            ownershipInformation = "\nOwner : " + this.owner;
+        }
+        return this.position + ". " + this.name + "\nOwned : " + this.owned + " " + ownershipInformation;
     }
 }

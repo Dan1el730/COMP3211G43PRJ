@@ -32,4 +32,26 @@ public class InputListener {
             return -1;
         }
     }
+    public static String fileNameResponse() {
+        System.out.print("Enter your desired file name (without .txt): ");
+        String filename = receivedResponse();
+
+        // Validate the filename
+        while (!isValidFilename(filename)) {
+            System.out.print("Invalid filename. Please enter a valid file name (without .txt): ");
+            filename = receivedResponse();
+        }
+        return filename + ".txt"; // Append .txt and return
+    }
+
+    private static boolean isValidFilename(String filename) {
+        // Define illegal characters for filenames
+        String illegalCharacters = "\\/:*?\"<>|"; // Characters not allowed in Windows file names
+        for (char c : illegalCharacters.toCharArray()) {
+            if (filename.indexOf(c) >= 0) {
+                return false; // Found an illegal character
+            }
+        }
+        return filename.length() > 0; // Ensure filename is not empty
+    }
 }

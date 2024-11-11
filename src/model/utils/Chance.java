@@ -13,9 +13,6 @@ public class Chance extends Square {
     }
     @Override
     public String effectLine(Player player){
-        if(this.amountToChange > 0){
-            return player.getName() + " just landed on the " + this.name + " square!";
-        }
         return player.getName() + " just landed on the " + this.name + " square!";
     }
     @Override
@@ -30,6 +27,11 @@ public class Chance extends Square {
         }
         player.checkRetirement();
     }
+    @Override
+    public String getStatus(){
+        return this.position + ". " + this.name;
+    }
+
     private int drawChange() {
         int index = rng.nextInt(CHANCE_MONEY_CHANGES.length);
         return CHANCE_MONEY_CHANGES[index];

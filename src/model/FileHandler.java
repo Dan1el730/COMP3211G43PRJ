@@ -6,6 +6,9 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import static model.utils.FILE_PATHS.GAMEBOARD_PATH;
+import static model.utils.FILE_PATHS.SQUARE_PATH;
+
 public class FileHandler implements GAME_CONSTANTS {
 
     //get number of lines of a file
@@ -25,7 +28,7 @@ public class FileHandler implements GAME_CONSTANTS {
     }
 
     //get every line of content store in String-array S
-    public static void getStringFromFile(String[] S, String filepath){
+    public static void getLinesFromFile(String[] S, String filepath){
         try{
             int i = 0;
             File nameFile = new File(filepath);
@@ -40,7 +43,7 @@ public class FileHandler implements GAME_CONSTANTS {
     }
 
     //get every word of every line of content, separated by comma, stored in String 2d array S
-    public static void getStringsFromFile(String[][] S, String filepath){
+    public static void getLinesOfWordsFromFile(String[][] S, String filepath){
         if(S.length == 0){
             return;
         }
@@ -59,7 +62,7 @@ public class FileHandler implements GAME_CONSTANTS {
     }
 
     //extract comma-separated two Strings mappings from file
-    public static void getMappingFromFile(HashMap<String, String> mapping, String filepath){
+    public static void extractMappingFromFile(HashMap<String, String> mapping, String filepath){
         try{
             File mappingFile = new File(filepath);
             Scanner r = new Scanner(mappingFile);
@@ -72,13 +75,26 @@ public class FileHandler implements GAME_CONSTANTS {
         }
     }
 
+    public static String[] getBoardDetails(int selectedBoardIndex){
+        String[] details = new String[GAMEBOARD_SQUARES];
+        int boardCount = getLinesCountFromFile(GAMEBOARD_PATH);
+        String[][] mapsDetails = new String[boardCount][GAMEBOARD_SQUARES+1];
+        getLinesOfWordsFromFile(mapsDetails,GAMEBOARD_PATH);
+        HashMap<String, String> squareNames = new HashMap<String,String>();
+        extractMappingFromFile(squareNames, SQUARE_PATH);
+        for(int i = 0; i < GAMEBOARD_SQUARES; i++){
+            details[i] = squareNames.get(mapsDetails[selectedBoardIndex][i+1]);
+        }
+        return details;
+    }
+
     //a very specific method to extract the positions (starting from 0) of property squares for a specific board
     public static int[] getPropertiesPosFromFile(String boardName, String boardpath, String proppath, String mappath){
         String[] boardData;
         String[] boardInformation = new String[GAMEBOARD_SQUARES];
         String[] properties = new String[GAMEBOARD_SQUARES];
         HashMap<String, String> squareNames = new HashMap<String,String>();
-        getMappingFromFile(squareNames, mappath);
+        extractMappingFromFile(squareNames, mappath);
         int i = 0;
         int j = 0;
         int count = 0;
@@ -145,4 +161,5 @@ public class FileHandler implements GAME_CONSTANTS {
             e.printStackTrace();
         }
     }
+
 }

@@ -3,7 +3,6 @@ package model.utils;
 import model.FileHandler;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static model.utils.FILE_PATHS.PROPERTY_PATH;
@@ -26,51 +25,57 @@ public class GameBoard extends FileHandler implements GAME_CONSTANTS{
         for(int i = 0; i < GAMEBOARD_SQUARES; i++) {
             switch(squareNames[i]){
                 case "Go":
-                    squares[i] = new Go(i+1, squareNames[i]);
+                    this.squares[i] = new Go(i+1, squareNames[i]);
                     break;
                 case "Chance":
-                    squares[i] = new Chance(i+1, squareNames[i]);
+                    this.squares[i] = new Chance(i+1, squareNames[i]);
                     break;
                 case "Income Tax":
-                    squares[i] = new IncomeTax(i+1, squareNames[i]);
+                    this.squares[i] = new IncomeTax(i+1, squareNames[i]);
                     break;
                 case "Free Parking":
-                    squares[i] = new FreeParking(i+1, squareNames[i]);
+                    this.squares[i] = new FreeParking(i+1, squareNames[i]);
                     break;
                 case "Go To Jail":
-                    squares[i] = new GoToJail(i+1, squareNames[i], ijjvIndex);
+                    this.squares[i] = new GoToJail(i+1, squareNames[i], ijjvIndex);
                     break;
                 case "In Jail/Just Visiting":
-                    squares[i] = new InJailJustVisiting(i+1, squareNames[i]);
+                    this.squares[i] = new InJailJustVisiting(i+1, squareNames[i]);
                     break;
                 default :
                     break;
             }
         }
         String[][] propInfo = new String[propertiesPositions.length][3];
-        getStringsFromFile(propInfo,PROPERTY_PATH);
+        getLinesOfWordsFromFile(propInfo,PROPERTY_PATH);
 
         int i = 0;
         for(int pos : propertiesPositions) {
-            squares[pos] = properties[i] = new Property(pos+1, squareNames[pos], Integer.parseInt(propInfo[i][1]), Integer.parseInt(propInfo[i++][2]));
+            this.squares[pos] = this.properties[i] = new Property(pos+1, squareNames[pos], Integer.parseInt(propInfo[i][1]), Integer.parseInt(propInfo[i++][2]));
         }
     }
+    public Property[] getProperties() {
+        return this.properties;
+    }
+    public Square[] getSquares() {
+        return this.squares;
+    }
     public void executePassEffect(Player player, int position){
-        Square currentSquare = squares[position-1];
+        Square currentSquare = this.squares[position-1];
         if(currentSquare.passEffective){
             System.out.println(currentSquare.effectLine(player));
             currentSquare.affectPlayer(player);
         }
     }
     public void executeLandEffect(Player player){
-        Square currentSquare = squares[player.getPosition()-1];
+        Square currentSquare = this.squares[player.getPosition()-1];
         System.out.println(currentSquare.effectLine(player));
         currentSquare.affectPlayer(player);
     }
     public String allOwnerships(Player player) {
         List<String> propsList = new ArrayList<>();
 
-        for (Property property : properties) {
+        for (Property property : this.properties) {
             if (property.getOwner() != null) {
                 if (property.getOwner().equals(player)) {
                     propsList.add(property.getName());
@@ -86,7 +91,7 @@ public class GameBoard extends FileHandler implements GAME_CONSTANTS{
         return String.join(",", propsList);
     }
     public void removeAllOwnerships(Player player){
-        for(Property property : properties){
+        for(Property property : this.properties){
             if (property.getOwner() != null) {
                 if (property.getOwner().equals(player)) {
                     property.disown();

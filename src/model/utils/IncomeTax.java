@@ -16,4 +16,8 @@ public class IncomeTax extends Square{
     private int calculateTax(Player player){
         return ((int)Math.floor(player.getMoney()*INCOME_TAX_RATE/10.0) * 10);
     }
+    @Override
+    public String getStatus(){
+        return this.position + ". " + this.name;
+    }
 }

@@ -48,11 +48,15 @@ public class Player implements GAME_CONSTANTS {
                                "\tProperties owned : " + this.playingBoard.allOwnerships(this) +
                                "\n";
     }
-    public String getDetails(){
-        return "Player " + this.number + " (" + this.name + ") , Money : " + this.money;
+    public String getInformation(){
+        return  this.name + "," +
+                this.number + "," +
+                this.money + "," +
+                this.position + "," +
+                (this.jailed ? "T" : "F") + "," +
+                (this.jailCounter+1) + "," +
+                this.playingBoard.allOwnerships(this);
     }
-
-
     public void move(Dice dice){
         System.out.print(this.name + " just moved from " + this.position);
         this.position = this.position + throwDice(dice);

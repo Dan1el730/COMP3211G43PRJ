@@ -16,4 +16,8 @@ public class FreeParking extends Square{
     public void affectPlayer(Player player){
         //Free parking has no effect!
     }
+    @Override
+    public String getStatus(){
+        return this.position + ". " + this.name;
+    }
 }

@@ -16,4 +16,8 @@ public class GoToJail extends Square{
         player.jail();
         player.setPosition(inJailJustVisitingPosition);
     }
+    @Override
+    public String getStatus(){
+        return this.position + ". " + this.name;
+    }
 }
