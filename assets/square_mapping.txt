@@ -1,15 +1,15 @@
 CT,Central
-WC,Wan Chai
+WC,WanChai
 SL,Stanley
-SO,Shek O
-MK,Mong Kok
-TY,Tsing Yi
+SO,ShekO
+MK,MongKok
+TY,TsingYi
 ST,Shatin
-TM,Tuen Mun
-TP,Tai Po
-SK,Sai Kung
-YL,Yuen Long
-TO,Tai O
+TM,TuenMun
+TP,TaiPo
+SK,SaiKung
+YL,YuenLong
+TO,TaiO
 GO,Go
 CH,Chance
 IT,Income Tax

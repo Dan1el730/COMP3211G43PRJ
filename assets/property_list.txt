@@ -1,12 +1,12 @@
 Central,800,90
-Wan Chai,700,65
+WanChai,700,65
 Stanley,600,60
-Shek O,400,10
-Mong Kok,500,40
-Tsing Yi,400,15
+ShekO,400,10
+MongKok,500,40
+TsingYi,400,15
 Shatin,700,75
-Tuen Mun,400,20
-Tai Po,500,25
-Sai Kung,400,10
-Yuen Long,400,25
-Tai O,600,25
+TuenMun,400,20
+TaiPo,500,25
+SaiKung,400,10
+YuenLong,400,25
+TaiO,600,25
