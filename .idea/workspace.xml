@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="37e3a779-57a1-4320-a17e-6d446962d1fd" name="Changes" comment="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'">
+      <change beforePath="$PROJECT_DIR$/assets/property_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/property_list.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/square_mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/square_mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/controller/InputListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/controller/InputListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/FileHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Chance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Chance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/FILE_PATHS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/FILE_PATHS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/FreeParking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/FreeParking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/GAME_CONSTANTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/GAME_CONSTANTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/GameBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Go.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Go.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/GoToJail.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/GoToJail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/InJailJustVisiting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/InJailJustVisiting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/IncomeTax.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/IncomeTax.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Property.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/view/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/view/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/view/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/view/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/controller/InputListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/FileHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/Chance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/Dice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/FILE_PATHS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/FreeParking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/GAME_CONSTANTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/GameBoard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/Go.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/GoToJail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/InJailJustVisiting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/IncomeTax.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/Property.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/model/utils/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/view/AdminArea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/view/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PRJ/view/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/InputListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/InputListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/Chance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/Chance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/FILE_PATHS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/FILE_PATHS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/FreeParking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/FreeParking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/Go.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/Go.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/GoToJail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/GoToJail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/InJailJustVisiting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/InJailJustVisiting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/IncomeTax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/IncomeTax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/utils/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/utils/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testing.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dan1el730&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Dan1el730/COMP3211G43PRJ.git&quot;,
+    &quot;accountId&quot;: &quot;12e31cb1-b0be-4525-8514-75ebb14ef79c&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2n9V7OAjyzl7Uz835ST3hL0iSE0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;P:/COMP3211G43PRJ&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="37e3a779-57a1-4320-a17e-6d446962d1fd" name="Changes" comment="" />
+      <created>1728385110291</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728385110291</updated>
+      <workItem from="1728385111406" duration="3542000" />
+      <workItem from="1728440323506" duration="1884000" />
+      <workItem from="1728535963286" duration="5300000" />
+      <workItem from="1728972162952" duration="8386000" />
+      <workItem from="1729047252702" duration="381000" />
+      <workItem from="1729141290703" duration="4714000" />
+      <workItem from="1729229678783" duration="1194000" />
+      <workItem from="1729322992132" duration="1856000" />
+      <workItem from="1729412790717" duration="668000" />
+      <workItem from="1730006585793" duration="5473000" />
+      <workItem from="1730973387521" duration="197000" />
+      <workItem from="1730973685583" duration="1979000" />
+      <workItem from="1731168000128" duration="4128000" />
+      <workItem from="1731307893574" duration="1515000" />
+      <workItem from="1731326016548" duration="918000" />
+    </task>
+    <task id="LOCAL-00001" summary="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'">
+      <option name="closed" value="true" />
+      <created>1728980787502</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728980787502</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'">
+      <option name="closed" value="true" />
+      <created>1728980873173</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728980873173</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'" />
+  </component>
+</project>
