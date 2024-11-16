@@ -54,8 +54,13 @@ public class GameBoard extends FileHandler implements GAME_CONSTANTS{
             this.squares[pos] = this.properties[i] = new Property(pos+1, squareNames[pos], Integer.parseInt(propInfo[i][1]), Integer.parseInt(propInfo[i++][2]));
         }
     }
-    public Property[] getProperties() {
-        return this.properties;
+    public Property getProperty(String name) {
+        for(Property p : properties) {
+            if(p.getName().equals(name)) {
+                return p;
+            }
+        }
+        return null;
     }
     public Square[] getSquares() {
         return this.squares;
@@ -74,7 +79,6 @@ public class GameBoard extends FileHandler implements GAME_CONSTANTS{
     }
     public String allOwnerships(Player player) {
         List<String> propsList = new ArrayList<>();
-
         for (Property property : this.properties) {
             if (property.getOwner() != null) {
                 if (property.getOwner().equals(player)) {
@@ -82,8 +86,6 @@ public class GameBoard extends FileHandler implements GAME_CONSTANTS{
                 }
             }
         }
-
-        // Join the properties into a single string
         if (propsList.isEmpty()) {
             return "nil"; // or return "No properties owned" if preferred
         }

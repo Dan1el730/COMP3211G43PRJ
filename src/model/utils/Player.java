@@ -19,8 +19,17 @@ public class Player implements GAME_CONSTANTS {
         this.playingBoard = gameBoard;
         this.retired = false;
     }
-    public Player(String[] fileRecord){
-
+    public Player(String name, GameBoard gameBoard, String records){
+        this.name = name;
+        String[] playerPastInfo = records.split(",");
+        this.money = Integer.parseInt(playerPastInfo[2]);
+        this.position = Integer.parseInt(playerPastInfo[3]);
+        this.number = Integer.parseInt(playerPastInfo[1]);
+        this.jailed = (!playerPastInfo[4].equals("F"));
+        this.jailCounter = (Integer.parseInt(playerPastInfo[5])) - 1;
+        this.playingBoard = gameBoard;
+        this.retired = (this.money<0);
+        inheritsOwnerships(playerPastInfo[6],gameBoard);
     }
     public int throwDice(Dice dice){
         return dice.getNewFace();
@@ -139,6 +148,14 @@ public class Player implements GAME_CONSTANTS {
             System.out.println(this.name + " just retired, the player is out!");
             this.retired = true;
             playingBoard.removeAllOwnerships(this);
+        }
+    }
+    private void inheritsOwnerships(String ownedProperties, GameBoard gameBoard){
+        if(ownedProperties.isEmpty()){
+            return;
+        }
+        for(String ownedProperty : ownedProperties.split(",")){
+            gameBoard.getProperty(ownedProperty).beOwnedBy(this);
         }
     }
 }

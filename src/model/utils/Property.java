@@ -14,6 +14,16 @@ public class Property extends Square{
         this.owned = false;
         this.owner = null;
     }
+    public String getName(){
+        return this.name;
+    }
+    public boolean isOwned(){
+        return this.owned;
+    }
+    public void beOwnedBy(Player player){
+        this.owner = player;
+        this.owned = true;
+    }
     public void disown(){
         this.owned = false;
         this.owner = null;
@@ -40,8 +50,7 @@ public class Property extends Square{
             }else{
                 System.out.println(player.getName() + " just owned " + this.name + " at a price of $" + this.price + ".");
                 player.reduceMoney(this.price);
-                this.owner = player;
-                this.owned = true;
+                this.beOwnedBy(player);
             }
         }else if(!player.equals(this.owner)){
             player.reduceMoney(this.rent);
