@@ -6,6 +6,7 @@ import model.utils.GAME_CONSTANTS;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -43,7 +44,6 @@ public class Application extends InputListener implements GAME_CONSTANTS {
         while(!confirmed){
             //User decides to build a game or terminate
             System.out.println("Building a game? (Type Y to build, type any key to terminate)");
-            System.out.print("You can as well enter the admin code to do changes, fellow coders.");
             response = receivedResponse();
             if(response.equals("COMP3211")){
                 adminConfirm = true;
@@ -147,20 +147,49 @@ public class Application extends InputListener implements GAME_CONSTANTS {
 
         // goes to developer side
         if(adminConfirm){
+            System.out.println("Welcome to development mode. You can now modify the game. (/help for Manual!)");
             AdminArea aa = new AdminArea();
             do{
                 response = receivedResponse();
                 aa.checkPrompt(response);
-            } while(!response.equals("COMP3211"));
-        }else if (usesFile){
-            System.out.println(selectedFile);
+            } while(!response.equals(":q"));
+        }else if (usesFile) {
+            String[] fileData = getInfoFromSaveFile(selectedFile);
+
+            // Assigning meaningful variable names
+            String round = fileData[0];
+            String turn = fileData[1];
+            String numberOfPlayers = fileData[2];
+            String plrNames = fileData[3];
+            String gameboardName = fileData[4];
+
+            // Extract player data based on the number of players
+            int currentPlayer = Integer.parseInt(turn);
+            int currentRound = Integer.parseInt(round);
+            int gameBoardIndex = getGameboardIndex(gameboardName);
+            int numPlayers = Integer.parseInt(numberOfPlayers);
+            String[] playerDataArray = new String[numPlayers];
+
+            // Collect player data
+            for (int i = 0; i < numPlayers; i++) {
+                playerDataArray[i] = fileData[5 + i]; // Assuming player data starts from index 5
+            }
+            Game game = new Game((currentPlayer-1),currentRound,gameboardName,gameBoardIndex,numPlayers,plrNames.split(","),playerDataArray);
+            while(!game.reachEnd()){
+                game.executeTurn();
+            }
+            System.out.println("The winner(s) of game is : " + game.winner() + ".");
+
         }else{
             //After instantiating everything, start the Game Object
             Game game = new Game(playerCount,playerNames,selectedBoard,selectedBoardIndex);
             while(!game.reachEnd()){
                 game.executeTurn();
             }
+            System.out.println("The winner(s) of game is : " + game.winner() + ".");
         }
+
+
 
         terminate();
     }

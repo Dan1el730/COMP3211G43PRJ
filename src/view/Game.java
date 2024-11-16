@@ -24,7 +24,7 @@ public class Game extends FileHandler implements GAME_CONSTANTS {
     public Game(int players, String[] names, String boardName, int boardIndex){
         this.currentPlayerIndex = 0;
         this.round = 1;
-        int[] propertiesPositions = getPropertiesPosFromFile(boardName,GAMEBOARD_PATH,PROPERTY_PATH,SQUARE_PATH);
+        int[] propertiesPositions = getPropertiesPosFromFile(boardName,GAMEBOARD_PATH,PROPERTY_PATH, MAPPING_PATH);
         this.gb = new GameBoard(propertiesPositions, getBoardDetails(boardIndex));
         this.gameBoardName = boardName;
         this.dice = new Dice();
@@ -35,10 +35,25 @@ public class Game extends FileHandler implements GAME_CONSTANTS {
             this.playerNames[i] = names[i];
         }
     }
+    public Game(int currentPlayerIndex, int round, String boardName, int boardIndex, int players, String[] names, String[] savedInfo){
+        this.currentPlayerIndex = currentPlayerIndex;
+        this.round = round;
+        int[] propertiesPositions = getPropertiesPosFromFile(boardName,GAMEBOARD_PATH,PROPERTY_PATH, MAPPING_PATH);
+        this.gb = new GameBoard(propertiesPositions, getBoardDetails(boardIndex));
+        this.gameBoardName = boardName;
+        this.dice = new Dice();
+        this.players = new Player[players];
+        this.playerNames = new String[players];
+        for(int i = 0; i < players; i++){
+            this.players[i] = new Player(names[i], this.gb, savedInfo[i]);
+            this.playerNames[i] = names[i];
+        }
+    }
     public void executeTurn(){
         Player currentPlayer = players[currentPlayerIndex];
         boolean turnEnd = false;
         boolean quitting = false;
+        boolean asked = false;
         while(!turnEnd){
             int originalPosition = currentPlayer.getPosition();
             if(currentPlayer.isRetired()){
@@ -56,7 +71,12 @@ public class Game extends FileHandler implements GAME_CONSTANTS {
                 }else if(r.equals("2")){
                     handleStatusQueries();
                 }else if(r.equals("3")){
-                    System.out.println("I'm querying!");
+                    if(!asked){
+                        QandA();
+                        asked = true;
+                    }else{
+                        System.out.println("You has already queried the next player this turn!");
+                    }
                 }else if(r.equals("4")){
                     System.out.println("Attempt to save the game?");
                     int foo = -1;
@@ -102,6 +122,7 @@ public class Game extends FileHandler implements GAME_CONSTANTS {
     //methods that are used even more internally
 
     private void showPlayerChoices(Player currentPlayer){
+        System.out.println("Round " + this.round + ", Turn " + (this.currentPlayerIndex+1));
         System.out.println("Player " + currentPlayer.getNumber() + " (" + currentPlayer.getName() + "), what is your move.");
         System.out.print(currentPlayer.getStatus());
         System.out.print("1. Throw dice\t2. Check status\t3. Query\t4. Save game");
@@ -143,6 +164,14 @@ public class Game extends FileHandler implements GAME_CONSTANTS {
             }
         }
     }
+    private void QandA(){
+        int nextPlayerIndex = (this.currentPlayerIndex + 1) % this.players.length;
+        System.out.println("State your question to be asked to " + this.players[nextPlayerIndex].getName() + ", "
+                + this.players[this.currentPlayerIndex].getName() + ".");
+        receivedResponse();
+        System.out.println("Player " + this.players[nextPlayerIndex].getName() + ", your answers? ");
+        receivedResponse();
+    }
     private void saveGameStateToFile(){
         File saveDirectory = new File(SAVE_PATH);
         if(!saveDirectory.exists()){
@@ -172,5 +201,41 @@ public class Game extends FileHandler implements GAME_CONSTANTS {
     private String generateDefaultFilename(File directory) {
         int fileCount = directory.listFiles((dir, name) -> name.startsWith("save") && name.endsWith(".txt")).length;
         return "save" + (fileCount + 1) + ".txt"; // Create filename like save1.txt, save2.txt, etc.
+    }
+
+    public String winner() {
+        int numRemainingPlayers = remainingPlayer();
+
+        if (numRemainingPlayers == 1) {
+            // Find the only remaining player
+            for (Player player : players) {
+                if (!player.isRetired()) {
+                    return player.getName(); // Only one player left, return their name
+                }
+            }
+        } else {
+            // More than one player remaining, find the highest money
+            int highestMoney = Integer.MIN_VALUE;
+            StringBuilder winners = new StringBuilder();
+
+            for (Player player : players) {
+                if (!player.isRetired()) {
+                    int playerMoney = player.getMoney();
+                    if (playerMoney > highestMoney) {
+                        highestMoney = playerMoney;
+                        winners.setLength(0); // Reset the winners list
+                        winners.append(player.getName()); // Start a new list of winners
+                    } else if (playerMoney == highestMoney) {
+                        if (winners.length() > 0) {
+                            winners.append(", "); // Add comma if there are already winners
+                        }
+                        winners.append(player.getName()); // Add this player to the winners list
+                    }
+                }
+            }
+
+            return winners.toString(); // Return comma-separated names of winners
+        }
+        return ""; // In case of unexpected situation, return empty string
     }
 }
