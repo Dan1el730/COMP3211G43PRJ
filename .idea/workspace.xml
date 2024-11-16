@@ -64,6 +64,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -91,18 +98,49 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Application.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.All in COMP3211G43PRJ.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.InJailJustVisitingTest.testAffectPlayerWhenJailedAndChoosingToPay.executor&quot;: &quot;Debug&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/COMP3211G43PRJ/src/model/utils&quot;,
     &quot;last_opened_file_path&quot;: &quot;P:/COMP3211G43PRJ&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="All in COMP3211G43PRJ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP3211G43PRJ" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in COMP3211G43PRJ" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -133,7 +171,15 @@
       <workItem from="1730973685583" duration="1979000" />
       <workItem from="1731168000128" duration="4128000" />
       <workItem from="1731307893574" duration="1515000" />
-      <workItem from="1731326016548" duration="918000" />
+      <workItem from="1731326016548" duration="8269000" />
+      <workItem from="1731504851972" duration="4157000" />
+      <workItem from="1731575878810" duration="5422000" />
+      <workItem from="1731594231732" duration="9829000" />
+      <workItem from="1731648890577" duration="2093000" />
+      <workItem from="1731671538291" duration="3649000" />
+      <workItem from="1731676308748" duration="5857000" />
+      <workItem from="1731687905859" duration="799000" />
+      <workItem from="1731740991100" duration="3025000" />
     </task>
     <task id="LOCAL-00001" summary="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'">
       <option name="closed" value="true" />
@@ -160,5 +206,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'" />
     <option name="LAST_COMMIT_MESSAGE" value="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/InputListener.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/COMP3211G43PRJ$All_in_COMP3211G43PRJ.ic" NAME="All in COMP3211G43PRJ Coverage Results" MODIFIED="1731674476088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
