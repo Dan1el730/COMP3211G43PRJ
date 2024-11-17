@@ -25,7 +25,6 @@ public class InJailJustVisiting extends Square{
         boolean yielded = false;
         if(player.isJailed()){
             if(player.getJailCounter() < 2 && player.getMoney() >= JAIL_PENALTY){
-
                 System.out.println("You now have $" + player.getMoney() + ".");
                 System.out.println("An offer to pay $" + JAIL_PENALTY + " fine instead of betting two same faces, yield? (Y/ any key)");
                 if(yesResponse()){
@@ -52,7 +51,7 @@ public class InJailJustVisiting extends Square{
                     System.out.println("The faces are not same, you are still jailed for " + player.getJailCounter() + " turns.");
                     player.passJailTurn();
                 }
-                if(player.getJailCounter() == -1){
+                if(player.getJailCounter() == -1 && firstFace != secondFace){
                     System.out.println("You are forced to pay a fine of $" + JAIL_PENALTY + " to get out of jail and move this turn according to two dices you threw.");
                     player.reduceMoney(JAIL_PENALTY);
                     player.unjail();
