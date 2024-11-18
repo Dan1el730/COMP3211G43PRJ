@@ -1,0 +1,17 @@
+Contact: contact1
+Name: Alan
+Address: PolyU
+Mobile Number: 98765432
+--------------------
+Event: event1
+Description: event1
+Start Time: 2023-11-30T13:00
+Alarm: false
+--------------------
+PlainText: plaintext1
+Content: plaintext
+--------------------
+Task: task1
+Description: task1
+Deadline: 2023-11-30T13:00
+--------------------
