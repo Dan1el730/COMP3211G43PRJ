@@ -1,0 +1,2 @@
+public class SthTest2 {
+}
