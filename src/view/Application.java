@@ -66,7 +66,7 @@ public class Application extends InputListener implements GAME_CONSTANTS {
                 }
                 selectedFile = files.get(selectedFileIndex - 1); // Adjust index for 0-based list
                 System.out.println("You selected: " + selectedFile);
-                System.out.println("Confirm the settings? (Type Y to begin game, type any key to rebuild)");
+                System.out.println("Confirm the settings? (Type Y sto begin game, type any key to rebuild)");
                 if (InputListener.yesResponse()) {
                     confirmed = true;
                     usesFile = true;
