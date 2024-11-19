@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import static model.utils.GAME_CONSTANTS.JAIL_PENALTY;
-import static model.utils.GAME_CONSTANTS.PLAYER_INITIAL_MONEY;
+import static model.GAME_CONSTANTS.JAIL_PENALTY;
+import static model.GAME_CONSTANTS.PLAYER_INITIAL_MONEY;
 import static org.junit.jupiter.api.Assertions.*;
 
 class InJailJustVisitingTest {

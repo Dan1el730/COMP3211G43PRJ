@@ -9,8 +9,8 @@ import java.io.InputStream;
 
 import static model.FileHandler.getBoardDetails;
 import static model.FileHandler.getPropertiesPosFromFile;
-import static model.utils.FILE_PATHS.*;
-import static model.utils.GAME_CONSTANTS.*;
+import static model.FILE_PATHS.*;
+import static model.GAME_CONSTANTS.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {

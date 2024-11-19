@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 
-import static model.utils.FILE_PATHS.*;
+import static model.FILE_PATHS.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FileTest {

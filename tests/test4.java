@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static model.FileHandler.getBoardDetails;
 import static model.FileHandler.getPropertiesPosFromFile;
-import static model.utils.FILE_PATHS.*;
+import static model.FILE_PATHS.*;
 
 class test4 {
     private GameBoard gameBoard;
