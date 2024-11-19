@@ -1,13 +1,14 @@
 package model.utils;
 
 import model.FileHandler;
+import model.GAME_CONSTANTS;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static model.utils.FILE_PATHS.PROPERTY_PATH;
+import static model.FILE_PATHS.PROPERTY_PATH;
 
-public class GameBoard extends FileHandler implements GAME_CONSTANTS{
+public class GameBoard extends FileHandler implements GAME_CONSTANTS {
     private Property[] properties;
     private Square[] squares;
     public GameBoard(int[] propertiesPositions, String[] squareNames) {

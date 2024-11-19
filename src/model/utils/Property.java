@@ -34,11 +34,13 @@ public class Property extends Square{
     @Override
     public String effectLine(Player player){
         if(!this.owned){
-            return player.getName() + " just landed on the " + this.name + " square! Do you want to buy " + this.name + " for $" + this.price + "?\n(Y to buy /any key to decline)";
+            return player.getName() + " just landed on the " + this.name + " square! Do you want to buy " + this.name + " for $" + this.price + "?\n" +
+                    "(Y to buy /any key to decline)";
         }else if(player.equals(this.owner)){
             return player.getName() + " just landed on the " + this.name + " square, which is the owner of this property!";
         }
-        return player.getName() + " just landed on the " + this.name + " square, which is owned by " + this.owner.getName() +"! You must pay for its rent : $" + this.rent + ".";
+        return player.getName() + " just landed on the " + this.name + " square, which is owned by " + this.owner.getName() +
+                "! You must pay for its rent : $" + this.rent + ".";
     }
     @Override
     public void affectPlayer(Player player){
@@ -63,7 +65,7 @@ public class Property extends Square{
     public String getStatus(){
         String ownershipInformation = "";
         if(this.owned){
-            ownershipInformation = "\nOwner : " + this.owner;
+            ownershipInformation = "\nOwner : " + this.owner.getName();
         }
         return this.position + ". " + this.name + "\nOwned : " + this.owned + " " + ownershipInformation;
     }

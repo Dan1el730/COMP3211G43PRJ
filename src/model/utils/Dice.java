@@ -1,5 +1,7 @@
 package model.utils;
 
+import model.GAME_CONSTANTS;
+
 import java.util.Random;
 
 public class Dice implements GAME_CONSTANTS {

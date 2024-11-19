@@ -1,6 +1,8 @@
 package model.utils;
 
-public abstract class Square implements GAME_CONSTANTS{
+import model.GAME_CONSTANTS;
+
+public abstract class Square implements GAME_CONSTANTS {
     protected String name;
     protected boolean passEffective;
     protected int position;

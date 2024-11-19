@@ -1,5 +1,7 @@
 package model.utils;
 
+import model.GAME_CONSTANTS;
+
 public class Player implements GAME_CONSTANTS {
     private String name;
     private int money;
@@ -155,7 +157,9 @@ public class Player implements GAME_CONSTANTS {
             return;
         }
         for(String ownedProperty : ownedProperties.split(",")){
-            gameBoard.getProperty(ownedProperty).beOwnedBy(this);
+            if(!ownedProperty.equals("nil")){
+                gameBoard.getProperty(ownedProperty).beOwnedBy(this);
+            }
         }
     }
 }
