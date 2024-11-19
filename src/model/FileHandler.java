@@ -238,7 +238,7 @@ public class FileHandler implements GAME_CONSTANTS {
         }
     }
 
-    private static Map<String, String> loadSquareMappings(String path) {
+    public static Map<String, String> loadSquareMappings(String path) {
         Map<String, String> mapping = new HashMap<>();
         try {
             File file = new File(path);
