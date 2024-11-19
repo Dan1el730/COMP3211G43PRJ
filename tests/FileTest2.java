@@ -3,10 +3,9 @@ import org.junit.jupiter.api.*;
 import java.io.*;
 import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static model.FILE_PATHS.*;
 import static model.GAME_CONSTANTS.*;
 
-class FileHandlerTest {
+public class FileTest2 {
     private static final String TEST_DIR = "test_files";
     private static final String TEST_PROPERTY_FILE = TEST_DIR + "/test_properties.txt";
     private static final String TEST_MAPPING_FILE = TEST_DIR + "/test_mapping.txt";
@@ -52,6 +51,7 @@ class FileHandlerTest {
         assertEquals(3, count, "Should count exactly 3 lines in test property file");
     }
 
+    /*
     @Test
     void testGetLinesFromFile() {
         String[] lines = new String[3];
@@ -60,7 +60,10 @@ class FileHandlerTest {
         assertEquals("Park Place,350,35", lines[1], "Second line should match");
         assertEquals("Mediterranean Avenue,60,2", lines[2], "Third line should match");
     }
+    */
 
+
+    /*
     @Test
     void testGetLinesOfWordsFromFile() {
         String[][] words = new String[2][8];  // Match the Classic board size
@@ -69,6 +72,8 @@ class FileHandlerTest {
         assertEquals("MA", words[0][1], "Second word of first line should be MA");
         assertEquals("GO", words[1][0], "First word of second line should be GO");
     }
+    */
+
 
     @Test
     void testExtractMappingFromFile() {

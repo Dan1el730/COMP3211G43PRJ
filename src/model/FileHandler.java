@@ -49,7 +49,7 @@ public class FileHandler implements GAME_CONSTANTS {
             Scanner r = new Scanner(nameFile);
             while(r.hasNextLine()){
                 String[] s = r.nextLine().split(",");
-                System.arraycopy(s, 0, S[i], 0, S[0].length);
+                System.arraycopy(s, 0, S[i], 0, s.length);
                 i++;
             }
         } catch(FileNotFoundException e) {

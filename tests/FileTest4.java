@@ -6,8 +6,8 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static model.FILE_PATHS.*;
 
-class FileTest4 {
-    private static final String TEST_DIR = "test_files";
+public class FileTest4 {
+    private static final String TEST_DIR = "savefiles/test_files";
     private static final String TEST_PROPERTY_FILE = TEST_DIR + "/test_properties.txt";
     private static final String TEST_MAPPING_FILE = TEST_DIR + "/test_mapping.txt";
     private static final String TEST_GAMEBOARD_FILE = TEST_DIR + "/test_gameboard.txt";
@@ -18,8 +18,9 @@ class FileTest4 {
 
     @BeforeAll
     static void setUpTestFiles() throws IOException {
-        // Create test directory
+        // Create test directory with 'savefiles' prefix
         new File(TEST_DIR).mkdirs();
+        // If 'saves' directory is needed, ensure it's created under 'savefiles/test_files'
         new File(TEST_DIR + "/saves").mkdirs();
 
         // Create test property file
@@ -50,6 +51,11 @@ class FileTest4 {
             writer.println("Current Player: Player1");
             writer.println("Position: 3");
         }
+
+        // Verify file creation
+        assertTrue(new File(TEST_GAMEBOARD_FILE).exists(), "Gameboard file should exist");
+        assertTrue(new File(TEST_SAVE_FILE).exists(), "Save file should exist");
+        // Add similar assertions for other files if necessary
     }
 
     @BeforeEach
@@ -95,7 +101,7 @@ class FileTest4 {
     @Test
     // HV PROBLEM
     void testGetLinesOfWordsFromFile() {
-        String[][] words = new String[2][5]; // 2 rows, 5 columns for gameboard file
+        String[][] words = new String[2][6]; // 2 rows, 5 columns for gameboard file
         FileHandler.getLinesOfWordsFromFile(words, TEST_GAMEBOARD_FILE);
 
         assertEquals("Classic", words[0][0], "First word of first line should be Classic");
@@ -146,7 +152,21 @@ class FileTest4 {
 
     @Test
     void testGetInfoFromSaveFile() {
-        String[] info = FileHandler.getInfoFromSaveFile(TEST_SAVE_FILE);
+        File saveFile = new File(TEST_SAVE_FILE);
+        assertTrue(saveFile.exists(), "Save file should exist");
+
+        String[] info = FileHandler.getInfoFromSaveFile("test_files/test_save.txt");
+
+        // Debugging: Print the contents of the info array
+        if (info != null) {
+            System.out.println("Info array length: " + info.length);
+            for (int i = 0; i < info.length; i++) {
+                System.out.println("info[" + i + "]: " + info[i]);
+            }
+        } else {
+            System.out.println("Info array is null");
+        }
+
         assertNotNull(info, "Save info should not be null");
         assertEquals("Classic", info[0], "Should get correct game board name");
         assertEquals("Player1", info[1], "Should get correct player name");
