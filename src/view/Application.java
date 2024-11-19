@@ -2,25 +2,21 @@ package view;
 
 
 import controller.InputListener;
-import model.utils.GAME_CONSTANTS;
+import model.GAME_CONSTANTS;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 import static model.FileHandler.getBoardDetails;
-import static model.utils.FILE_PATHS.*;
+import static model.FILE_PATHS.*;
 import static model.FileHandler.*;
 
-/**
- * Starting point of the code
- */
 public class Application extends InputListener implements GAME_CONSTANTS {
 
     private static void terminate(){
-        System.out.println("Exiting the game...");
+        System.out.println("Exiting...");
         System.exit(0);
     }
     public static void main(String[] args){
@@ -53,7 +49,7 @@ public class Application extends InputListener implements GAME_CONSTANTS {
             }
 
             //User decides to load existing game from file or not
-            System.out.print("Load game from save slots? (Type Y to load a file, type any key to start from scratch)");
+            System.out.print("Load game from save slots? (Type Y to load a file, type any key to start from scratch)\n");
             if(yesResponse()){
                 System.out.println("Please select a file to load:");
                 List<String> files = listFiles(SAVE_PATH);

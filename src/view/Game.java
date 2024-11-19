@@ -1,6 +1,7 @@
 package view;
 
 import model.FileHandler;
+import model.GAME_CONSTANTS;
 import model.utils.*;
 
 import java.io.File;
@@ -10,7 +11,7 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 
 import static controller.InputListener.*;
-import static model.utils.FILE_PATHS.*;
+import static model.FILE_PATHS.*;
 
 public class Game extends FileHandler implements GAME_CONSTANTS {
     private int currentPlayerIndex;
@@ -83,14 +84,16 @@ public class Game extends FileHandler implements GAME_CONSTANTS {
                     while(foo == -1){
                         System.out.print("1. Save the game and exit immediately\n" +
                                          "2. Save the game and proceed current game afterwards\n" +
-                                         "3. Cancel the save action and proceed the game");
+                                         "3. Cancel the save action and proceed the game\n");
                         foo = rangedIntegerResponse(1,3,0);
                         if(foo == 1){
                             saveGameStateToFile();
+                            System.out.println("Game saved, see you next play.\n");
                             quitting = true;
                             turnEnd = true;
                         } else if(foo == 2){
                             saveGameStateToFile();
+                            System.out.println("Game saved, you may proceed.\n");
                         } else if(foo == 3){
                             System.out.println("Game proceeded without saving.");
                         }
@@ -125,7 +128,7 @@ public class Game extends FileHandler implements GAME_CONSTANTS {
         System.out.println("Round " + this.round + ", Turn " + (this.currentPlayerIndex+1));
         System.out.println("Player " + currentPlayer.getNumber() + " (" + currentPlayer.getName() + "), what is your move.");
         System.out.print(currentPlayer.getStatus());
-        System.out.print("1. Throw dice\t2. Check status\t3. Query\t4. Save game");
+        System.out.print("1. Throw dice\t2. Check status\t3. Query\t4. Save game\n");
     }
     private void handleStatusQueries(){
         int foo = -1;

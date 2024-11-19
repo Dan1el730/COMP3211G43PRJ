@@ -1,7 +1,7 @@
 package view;
 
 import model.FileHandler;
-import model.utils.GAME_CONSTANTS;
+import model.GAME_CONSTANTS;
 
 import java.io.*;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 import static controller.InputListener.rangedIntegerResponse;
 import static controller.InputListener.receivedResponse;
-import static model.utils.FILE_PATHS.*;
+import static model.FILE_PATHS.*;
 
 public class AdminArea extends FileHandler implements GAME_CONSTANTS {
     //allow admin to obtain variable/ file changes
@@ -54,8 +54,8 @@ public class AdminArea extends FileHandler implements GAME_CONSTANTS {
 
             // Save the gameboard to the file
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(GAMEBOARD_PATH, true))) {
+                writer.newLine();
                 writer.write(gameboardData.toString());
-                writer.newLine(); // Add a newline after writing the gameboard
                 System.out.println("Tempboard '" + tempBoardName + "' saved successfully.");
             } catch (IOException e) {
                 System.err.println("Error saving the gameboard: " + e.getMessage());
@@ -139,7 +139,7 @@ public class AdminArea extends FileHandler implements GAME_CONSTANTS {
                     System.out.println("What is the name of the property?");
                     name = receivedResponse();
                     boolean gotPrice = false;
-                    int price = -1;
+                    int price;
                     do{
                         //Asking for a valid player count
                         System.out.println("What is the price of the property? ("+ MINIMUM_PRICE + "-" + MAXIMUM_PRICE + ")");
@@ -149,7 +149,7 @@ public class AdminArea extends FileHandler implements GAME_CONSTANTS {
                         }
                     } while(!gotPrice);
                     boolean gotRent = false;
-                    int rent = -1;
+                    int rent;
                     do{
                         //Asking for a valid player count
                         System.out.println("What is the rent of the property? ("+ MINIMUM_RENT + "-" + MAXIMUM_RENT + ")");
@@ -206,7 +206,8 @@ public class AdminArea extends FileHandler implements GAME_CONSTANTS {
                             ":q : quits developer side");
 
                     break;
-
+                case ":q":
+                    break;
                 default:
                     System.out.println("Command not found.");
                     break;
