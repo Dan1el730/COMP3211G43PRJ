@@ -5,39 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37e3a779-57a1-4320-a17e-6d446962d1fd" name="Changes" comment="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'">
-      <change afterPath="$PROJECT_DIR$/tests/ChanceTest2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/InJailJustVisitingTest2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/FileHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Dice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/GameBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Go.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Go.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/InJailJustVisiting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/InJailJustVisiting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/IncomeTax.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/IncomeTax.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Property.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/model/utils/Square.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/view/AdminArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/view/AdminArea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/view/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/view/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/view/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP3211G43PRJ/view/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/ChanceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/ChanceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/FreeParkingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/FreeParkingTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/InJailJustVisitingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/InJailJustVisitingTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/PlayerConstructorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/PlayerConstructorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/PlayerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/PlayerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/PropertyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/PropertyTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/sthTest2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/sthTest2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/sthtest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/sthtest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/test4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/COMP3211G43PRJ/test4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ChanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ChanceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/FileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/FileTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/FreeParkingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/FreeParkingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/InJailJustVisitingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/InJailJustVisitingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/PropertyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PropertyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/sthTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/sthTest2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/sthtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/sthtest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test4.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test4.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +111,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InJailJustVisitingTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP3211G43PRJ" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InJailJustVisitingTest2" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlayerConstructorTest.testPlayerRecordsConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP3211G43PRJ" />
       <option name="PACKAGE_NAME" value="" />
@@ -152,22 +130,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP3211G43PRJ" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="test4" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in COMP3211G43PRJ" />
+        <item itemvalue="JUnit.InJailJustVisitingTest2" />
         <item itemvalue="JUnit.ChanceTest2" />
         <item itemvalue="JUnit.PlayerConstructorTest.testPlayerRecordsConstructor" />
         <item itemvalue="Application.Application" />
-        <item itemvalue="JUnit.test4" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +182,7 @@
       <workItem from="1731935285387" duration="2064000" />
       <workItem from="1731940445577" duration="1000" />
       <workItem from="1731940514895" duration="6068000" />
-      <workItem from="1731984100067" duration="684000" />
+      <workItem from="1731984100067" duration="1406000" />
     </task>
     <task id="LOCAL-00001" summary="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'">
       <option name="closed" value="true" />
@@ -263,7 +232,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/workspace_xml$All_in_COMP3211G43PRJ.ic" NAME="All in COMP3211G43PRJ Coverage Results" MODIFIED="1731984769421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/workspace_xml$All_in_COMP3211G43PRJ.ic" NAME="All in COMP3211G43PRJ Coverage Results" MODIFIED="1731985455272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/workspace_xml$ChanceTest_and_6_more.ic" NAME="ChanceTest and 6 more Coverage Results" MODIFIED="1731945336300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/COMP3211G43PRJ$All_in_COMP3211G43PRJ.ic" NAME="All in COMP3211G43PRJ Coverage Results" MODIFIED="1731674476088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/workspace_xml$ChanceTest.ic" NAME="ChanceTest Coverage Results" MODIFIED="1731945369177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
