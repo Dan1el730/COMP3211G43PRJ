@@ -1,0 +1,7 @@
+Round: 10
+Turn: 2
+Number of players: 2
+Player names: Fabio,Eve
+Gameboard name: Classic
+Player 1: Fabio,1,315,13,F,0,Stanley,MongKok
+Player 2: Eve,2,265,15,F,0,TsingYi,Shatin

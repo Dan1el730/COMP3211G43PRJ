@@ -1,0 +1,7 @@
+Round: 1
+Turn: 1
+Number of players: 2
+Player names: hi,bye
+Gameboard name: Classic
+Player 1: hi,1,1500,1,F,0,nil
+Player 2: bye,2,1500,1,F,0,nil

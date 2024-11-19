@@ -1,7 +1,11 @@
-Round: 5
-Turn: 2
-Number of players: 2
-Player names: Georgina,Evan
+Round: 3
+Turn: 1
+Number of players: 6
+Player names: Hari,Kara,Carla,Evan,Emilie,Zenless
 Gameboard name: Classic
-Player 1: Georgina,1,700,11,F,0,Central
-Player 2: Evan,2,400,12,F,0,Stanley
+Player 1: Hari,1,1000,9,F,0,Stanley
+Player 2: Kara,2,1350,6,F,0,nil
+Player 3: Carla,3,950,7,F,0,ShekO
+Player 4: Evan,4,1500,6,F,0,nil
+Player 5: Emilie,5,980,8,F,0,MongKok
+Player 6: Zenless,6,1310,8,F,0,nil
