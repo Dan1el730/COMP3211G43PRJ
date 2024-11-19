@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37e3a779-57a1-4320-a17e-6d446962d1fd" name="Changes" comment="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'">
-      <change afterPath="$PROJECT_DIR$/tests/InJailJustVisitingTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/FileTest2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,19 +81,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in COMP3211G43PRJ">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.Application" />
-      <module name="COMP3211G43PRJ" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in COMP3211G43PRJ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP3211G43PRJ" />
       <option name="PACKAGE_NAME" value="" />
@@ -111,6 +98,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP3211G43PRJ" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FileHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP3211G43PRJ" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FileTest2" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InJailJustVisitingTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP3211G43PRJ" />
       <option name="PACKAGE_NAME" value="" />
@@ -120,23 +125,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerConstructorTest.testPlayerRecordsConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP3211G43PRJ" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlayerConstructorTest" />
-      <option name="METHOD_NAME" value="testPlayerRecordsConstructor" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in COMP3211G43PRJ" />
+        <item itemvalue="JUnit.FileHandlerTest" />
+        <item itemvalue="JUnit.FileTest2" />
         <item itemvalue="JUnit.InJailJustVisitingTest2" />
         <item itemvalue="JUnit.ChanceTest2" />
-        <item itemvalue="JUnit.PlayerConstructorTest.testPlayerRecordsConstructor" />
-        <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +177,7 @@
       <workItem from="1731935285387" duration="2064000" />
       <workItem from="1731940445577" duration="1000" />
       <workItem from="1731940514895" duration="6068000" />
-      <workItem from="1731984100067" duration="1406000" />
+      <workItem from="1731984100067" duration="1722000" />
     </task>
     <task id="LOCAL-00001" summary="added the following functionalities:&#10;&#10;-Player will disown their properties when retired ($ less than 0)&#10;&#10;&#10;-Status of a Player now includes their owned Properties (generally better view/competition in game)&#10;&#10;-fixed issue where when a Player pays $150 to instantly get out of jail, can throw 3* dices (* 1 from normal instant out of jail, 2 from jail behaviour)&#10;&#10;-fixed issue where player does not retire if they pay for a property they do not have enough money on&#10; &gt; and hence, player cannot opt to own a property they do not have enough money on now&#10; &#10; -fine-tuned some lines displays&#10; &gt; Free Parking/ Just visiting now shows whether player passes or lands on them&#10; &gt; setting preview from initialization loop shows 'Square 1-20' instead of 'Board 1-20'">
       <option name="closed" value="true" />
