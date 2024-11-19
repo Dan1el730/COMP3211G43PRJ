@@ -1,11 +1,9 @@
 package model;
 
-import model.utils.GAME_CONSTANTS;
-
 import java.io.*;
 import java.util.*;
 
-import static model.utils.FILE_PATHS.*;
+import static model.FILE_PATHS.*;
 
 public class FileHandler implements GAME_CONSTANTS {
 
@@ -143,7 +141,7 @@ public class FileHandler implements GAME_CONSTANTS {
 
     public static void writeNewProperty(String propertyName, int propertyPrice, int propertyRent, String proppath) {
         // Open the BufferedWriter in append mode
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(proppath, true))) { // true for append mode
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(proppath, true))) {
             writer.newLine();
             writer.write(propertyName + "," + propertyPrice + "," + propertyRent);
         } catch (IOException e) {
@@ -152,7 +150,7 @@ public class FileHandler implements GAME_CONSTANTS {
     }
 
     public static void writeNewMapping(String propertyAbbreviation, String propertyName, String mappath){
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(mappath, true))) { // true for append mode
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(mappath, true))) {
             writer.newLine();
             writer.write(propertyAbbreviation + "," + propertyName);
         } catch (IOException e) {
