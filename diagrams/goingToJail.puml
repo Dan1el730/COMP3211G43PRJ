@@ -1,0 +1,14 @@
+@startuml
+actor Player
+
+participant "GoToJail" as GoToJail
+
+Player -> GoToJail : lands on
+GoToJail -> Player : effectLine()
+GoToJail -> Player : affectPlayer()
+Player -> Player : isJailed()
+GoToJail -> Player : sets position to jail
+
+note right of Player : Player's state changes to jailed\nand they are moved to the jail position.
+
+@enduml

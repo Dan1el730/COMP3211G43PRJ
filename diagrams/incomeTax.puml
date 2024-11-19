@@ -1,0 +1,31 @@
+@startuml
+actor Player
+participant Dice
+participant GameBoard
+participant Chance
+
+Player -> Dice : throwDice()
+Dice -> Dice : roll()
+Dice --> Player : getNewFace()
+
+Player -> GameBoard : useTurn(dice)
+GameBoard -> Player : getPosition()
+
+Player -> GameBoard : checkEffects(originalPosition, newPosition)
+GameBoard -> Chance : executeLandEffect(player)
+Chance -> Player : effectLine(player)
+Player --> Chance : "PlayerName just landed on the Chance square!"
+
+Chance -> Chance : drawChange()
+Chance --> Player : amountToChange
+alt amountToChange > 0
+    Chance -> Player : addMoney(amountToChange)
+    Player --> Chance : "PlayerName gained $amountToChange."
+else amountToChange < 0
+    Chance -> Player : reduceMoney(amountToChange)
+    Player --> Chance : "PlayerName lost $amountToChange."
+end
+
+Player -> GameBoard : checkRetirement()
+GameBoard --> Player : check if retired
+@enduml

@@ -1,0 +1,168 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+interface GAME_CONSTANTS {
+    +MINIMUM_PLAYERS: int
+    +MAXIMUM_PLAYERS: int
+    +PLAYER_INITIAL_MONEY: int
+    +GO_INCOME: int
+    +CHANCE_MONEY_CHANGES: int[]
+    +INCOME_TAX_RATE: double
+    +JAIL_DAYS: int
+    +JAIL_PENALTY: int
+    +PLAYER_INITIAL_POSITION: int
+    +DICE_FACES: int
+    +MAXIMUM_ROUNDS: int
+    +GAMEBOARD_SQUARES: int
+    +MINIMUM_PRICE: int
+    +MAXIMUM_PRICE: int
+    +MINIMUM_RENT: int
+    +MAXIMUM_RENT: int
+}
+
+class Chance extends Square{
+    -amountToChange: int
+    -rng: Random
+    +Chance(position: int, name: String)
+    +effectLine(player: Player): String
+    +affectPlayer(player: Player): void
+    +getStatus(): String
+    -drawChange(): int
+}
+
+class Square implements GAME_CONSTANTS {
+    -name: String
+    -passEffective: boolean
+    -position: int
+    +Square(position: int, name: String)
+    +getName(): String
+    +getPosition(): int
+    +effectLine(player: Player): String
+    +affectPlayer(player: Player): void
+    +getStatus(): String
+}
+
+class Dice implements GAME_CONSTANTS {
+    -face: int
+    -roller: Random
+    +Dice()
+    +getNewFace(): int
+    -roll(): void
+}
+
+class FreeParking {
+    +FreeParking(position: int, name: String)
+    +effectLine(player: Player): String
+    +affectPlayer(player: Player): void
+    +getStatus(): String
+}
+
+class GameBoard extends FileHandler implements GAME_CONSTANTS {
+    -properties: Property[]
+    -squares: Square[]
+    +GameBoard(propertiesPositions: int[], squareNames: String[])
+    +getProperty(name: String): Property
+    +getSquares(): Square[]
+    +executePassEffect(player: Player, position: int): void
+    +executeLandEffect(player: Player): void
+    +allOwnerships(player: Player): String
+    +removeAllOwnerships(player: Player): void
+}
+
+class Go {
+    +Go(position: int, name: String)
+    +effectLine(player: Player): String
+    +affectPlayer(player: Player): void
+    +getStatus(): String
+}
+
+class GoToJail {
+    -inJailJustVisitingPosition: int
+    +GoToJail(position: int, name: String, ijjvIndex: int)
+    +effectLine(player: Player): String
+    +affectPlayer(player: Player): void
+    +getStatus(): String
+}
+
+class IncomeTax {
+    +IncomeTax(position: int, name: String)
+    +effectLine(player: Player): String
+    +affectPlayer(player: Player): void
+    -calculateTax(player: Player): int
+    +getStatus(): String
+}
+
+class InJailJustVisiting {
+    -jailDice: Dice
+    +InJailJustVisiting(position: int, name: String)
+    +effectLine(player: Player): String
+    +affectPlayer(player: Player): void
+    +getStatus(): String
+}
+
+class Player implements GAME_CONSTANTS {
+    -name: String
+    -money: int
+    -position: int
+    -number: int
+    -jailed: boolean
+    -jailCounter: int
+    -playingBoard: GameBoard
+    -retired: boolean
+    +Player(name: String, number: int, gameBoard: GameBoard)
+    +Player(name: String, gameBoard: GameBoard, records: String)
+    +throwDice(dice: Dice): int
+    +getName(): String
+    +getMoney(): int
+    +getPosition(): int
+    +getNumber(): int
+    +isJailed(): boolean
+    +isRetired(): boolean
+    +getStatus(): String
+    +getInformation(): String
+    +move(dice: Dice): void
+    +move(steps: int): void
+    +jail(): void
+    +unjail(): void
+    +getJailCounter(): int
+    +passJailTurn(): void
+    +setPosition(newPosition: int): void
+    +addMoney(change: int): void
+    +reduceMoney(change: int): void
+    +useTurn(dice: Dice): void
+    +useTurn(steps: int): void
+    +checkEffects(startPosition: int, endPosition: int): void
+    +checkRetirement(): void
+    -checkPassEffect(position: int): void
+    -checkLandEffect(): void
+    -inheritsOwnerships(ownedProperties: String, gameBoard: GameBoard): void
+}
+
+class Property extends Square {
+    -price: int
+    -rent: int
+    -owned: boolean
+    -owner: Player
+    +Property(position: int, name: String, price: int, rent: int)
+    +getName(): String
+    +isOwned(): boolean
+    +beOwnedBy(player: Player): void
+    +disown(): void
+    +getOwner(): Player
+    +effectLine(player: Player): String
+    +affectPlayer(player: Player): void
+    +getStatus(): String
+}
+
+' Relationships
+Square <|-- Property
+Square <|-- Go
+Square <|-- GoToJail
+Square <|-- IncomeTax
+Square <|-- FreeParking
+Square <|-- InJailJustVisiting
+Player o-- GameBoard : plays on >
+GameBoard *-- Property : contains >
+GameBoard *-- Square : contains >
+Dice *-- Player : uses >
+@enduml

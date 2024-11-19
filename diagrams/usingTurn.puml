@@ -1,0 +1,47 @@
+@startuml
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 20
+skinparam maxmessagesize 600
+skinparam sequenceParticipant underline
+
+actor User
+participant "Game.java" as A
+participant "Player.java" as B
+participant "Dice.java" as C
+participant "GameBoard.java" as D
+participant "Square.java" as E
+
+User -> A: use his turn
+activate A
+
+A -> B: currentPlayer.useTurn(this.dice)
+activate B
+
+B -> C: this.move(dice)
+activate C
+C -> C: roll()
+C --> B: getNewFace()
+destroy C
+
+B --> D: this.checkEffects(originalPosition,newPosition)
+activate D
+
+D -> E: executeLandEffect(player)
+activate E
+E --> D: effectLine(player)
+E --> D: affectPlayer(player)
+deactivate E
+
+D --> B: effects executed successfully
+
+alt Player is retired
+    B --> A: Player has retired
+else Player is active
+    B --> A: turn completed
+end
+
+deactivate D
+
+A --> User: Done
+deactivate A
+@enduml
