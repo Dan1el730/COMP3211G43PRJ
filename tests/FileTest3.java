@@ -145,13 +145,13 @@ class FileTest3 {
 
         // Verify gameboard information is present
         assertTrue(output.contains("Classic"), "Output should contain 'Classic' board");
-        assertTrue(output.contains("Mini"), "Output should contain 'Mini' board");
+        assertTrue(output.contains("GoGoVan"), "Output should contain 'Mini' board");
 
         // Verify mapped square names are present
         assertTrue(output.contains("Go"), "Output should contain 'Go' square");
-        assertTrue(output.contains("Boardwalk"), "Output should contain 'Boardwalk' square");
-        assertTrue(output.contains("Park Place"), "Output should contain 'Park Place' square");
-        assertTrue(output.contains("Mediterranean Avenue"), "Output should contain 'Mediterranean Avenue' square");
+        assertTrue(output.contains("Go To Jail"), "Output should contain 'Go To Jail' square");
+        assertTrue(output.contains("Central"), "Output should contain 'Central' square");
+        assertTrue(output.contains("TaiO"), "Output should contain 'TaiO' square");
     }
 
     @Test
